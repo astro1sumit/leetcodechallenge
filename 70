@@ -1,0 +1,19 @@
+class Solution {
+    public int climbStairs(int n){
+        int term1 = 1;
+        if(n==1){
+            return 1;
+        }
+        int term2 = 2;
+        if(n==2){
+            return 2;
+        }
+        int term3 = 0;
+        for(int i=3;i<=n;i++){
+            term3=term1+term2;
+            term1=term2;
+            term2=term3;
+        }
+        return term3;
+    }
+}
