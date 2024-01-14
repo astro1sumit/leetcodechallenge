@@ -1,0 +1,20 @@
+1071. Greatest Common Divisor of Strings
+class Solution {
+    public String gcdOfStrings(String str1, String str2) {
+        int p=0;
+        if (!(str1 + str2).equals(str2 + str1)) {
+            return "";
+        } else {
+            p = Math.min(str1.length(), str2.length());
+            while (p > 0) {
+                if (str1.length() % p == 0 && str2.length() % p == 0) {
+                    break;
+                } else {
+                    p--;
+
+                }
+            }
+        }
+        return str1.substring(0, p);
+    }
+}
