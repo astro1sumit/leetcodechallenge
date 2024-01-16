@@ -1,0 +1,14 @@
+121. Best Time to Buy and Sell Stock
+class Solution {
+    public int maxProfit(int[] prices) {
+        int prf=0;
+        int ver=0;
+        int tmp=prices[0];
+        for(int i=1;i<prices.length; i++){
+            ver = prices[i]-tmp;
+            prf=Math.max(prf,ver);
+            tmp=Math.min(tmp,prices[i]);
+        }
+        return prf;
+    }
+}
