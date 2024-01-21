@@ -1,0 +1,14 @@
+198. House Robber
+class Solution {
+    public int rob(int[] nums) {
+        int r = 0;
+        int n = 0;
+        for (int i = 0; i < nums.length; i ++) {
+            int x = n + nums[i];
+            int y = Math.max(n, r);
+            r = x;
+            n = y;
+        }
+        return Math.max(r, n);
+    }
+}
