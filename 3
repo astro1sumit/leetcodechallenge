@@ -1,0 +1,16 @@
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int max=0;
+        StringBuilder SB=new StringBuilder("");
+        for(int i=0; i<s.length();i++){
+            char ch=s.charAt(i);
+            int index=SB.indexOf(ch+"");
+            if(index!=-1){
+                SB=SB.delete(0,index+1);
+            }
+            SB.append(ch);
+            max=Math.max(max,SB.length());
+        }
+        return max;
+    }
+}
