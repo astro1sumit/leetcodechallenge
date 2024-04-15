@@ -1,0 +1,11 @@
+class Solution {
+    public int maximumCount(int[] nums) {
+        int ng = 0, ps = 0;
+        for (int x : nums)
+            if (x > 0)
+                ps++;
+            else if (x < 0)
+                ng++;
+        return Math.max(ng, ps);
+    }
+}
